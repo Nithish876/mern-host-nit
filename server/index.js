@@ -108,7 +108,7 @@ app.use(express.static(path.join(__dirname,'../client/build')))
 app.get("*",(req,res)=>{
     res.sendFile(path.join(__dirname,'../client/build/index.html'))
 })
-const PORT = process.env.PORT || 4004
+const PORT = process.env.API_PORT
 connectdb().then(() => {
     app.listen(PORT,()=>{
         console.log('server is runnin gon the port '+PORT);
